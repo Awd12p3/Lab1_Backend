@@ -11,6 +11,7 @@ export async function createUser(req, res) {
 }
 
 //READ
+//Read by id
 export async function readUser(req, res) {
   try {
     const id = req.params.id;
@@ -21,7 +22,7 @@ export async function readUser(req, res) {
   }
 }
 
-export async function readUserByMailAndPassword(req, res) {
+export async function readUser_Mail(req, res) {
   try {
     const { mail, password } = req.params;
     const document = await userModel.findOne({
@@ -48,12 +49,14 @@ export async function updateUser(req, res) {
     res.status(400).json(error.message);
   }
 }
+
 //DELETE
 export async function deleteUser(req, res) {
   try {
     const id = req.params.id;
     const document = await userModel.findById(id);
     document.active = false;
+    document.new = true;
     await document.save();
     res.status(200).json(document);
   } catch (error) {

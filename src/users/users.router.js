@@ -9,17 +9,17 @@ import {
 
 const userRouter = Router();
 
-//CREATE
+//Create
 userRouter.post('/', createUser);
 
-//READ
+//Read
 userRouter.get('/:id', readUser);
-userRouter.get('/:mail/:password', readUserByMailAndPassword);
+userRouter.get('/:mail/:password', readUser_Mail);
 
-//UPDATE
+//Update
 userRouter.patch('/:id', updateUser);
 
-//DELETE
+//Delete
 userRouter.delete('/:id', deleteUser);
 
 export default userRouter;
