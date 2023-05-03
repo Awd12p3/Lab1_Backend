@@ -15,7 +15,7 @@ export async function createUser(req, res) {
 export async function readUser(req, res) {
   try {
     const id = req.params.id;
-    const document = await userModel.findById(id);
+    const document = await userModel.findById({ _id: id, active: true });
     res.status(200).json(document);
   } catch (error) {
     res.status(400).json(error.message);
