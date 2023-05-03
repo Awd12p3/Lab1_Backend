@@ -9,8 +9,9 @@ import {
 const restaurantRouter = Router();
 
 restaurantRouter.post('/', createRestaurant);
-restaurantRouter.get('/', readRestaurant);
-restaurantRouter.patch('/', updateRestaurant);
-restaurantRouter.delete('/', deleteRestaurant);
+restaurantRouter.get('/:id', readRestaurant);
+restaurantRouter.get('/', readRestaurant_NameOrCat); //??????
+restaurantRouter.patch('/:id', updateRestaurant);
+restaurantRouter.delete('/:id', deleteRestaurant);
 
 export default restaurantRouter;
