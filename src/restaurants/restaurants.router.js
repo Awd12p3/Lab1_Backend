@@ -4,6 +4,7 @@ import {
   deleteRestaurant,
   readRestaurant,
   updateRestaurant,
+  readRestaurant_NameOrCat,
 } from './restaurants.controller';
 
 const restaurantRouter = Router();
