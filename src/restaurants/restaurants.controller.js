@@ -59,7 +59,7 @@ export async function updateRestaurant(req, res) {
 export async function deleteRestaurant(req, res) {
   try {
     const id = req.params.id;
-    const document = await userModel.findById(id);
+    const document = await restaurantModel.findById(id);
     document.active = false;
     document.new = true;
     await document.save();
